@@ -32,7 +32,7 @@ def main():
     print(banner)
     
     parser = argparse.ArgumentParser(
-        description="HackerOneCsvGrabber - Extracts and processes scope data from HackerOne CSV files.",
+        description="HackerOneCsvGrabber - Extracts and processes scope assets from HackerOne CSV files.",
         prog='HackerOneCsvGrabber',
         epilog="""
 EXAMPLES:
