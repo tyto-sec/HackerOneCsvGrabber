@@ -32,12 +32,12 @@ def main():
     print(banner)
     
     parser = argparse.ArgumentParser(
-        description="HackerOne CSV Grabber - Extracts and processes security scope data from HackerOne VDP CSV files.",
-        prog='h1csvGrabber',
+        description="HackerOneCsvGrabber - Extracts and processes scope data from HackerOne CSV files.",
+        prog='HackerOneCsvGrabber',
         epilog="""
 EXAMPLES:
-  python3 main.py --input ./scope --output ./results
-  python3 main.py --input /path/to/csvs --output /path/to/output
+  HackerOneCsvGrabber --input ./scope --output ./results
+  HackerOneCsvGrabber --input /path/to/csvs --output /path/to/output
 
 OUTPUT FILES:
   - rough_urls.txt                    - Raw URLs extracted from CSV
@@ -51,11 +51,7 @@ OUTPUT FILES:
   - apple_store_app_ids.txt           - Apple Store app identifiers
   - google_play_app_ids.txt           - Google Play app identifiers
 
-REQUIREMENTS:
-  - Input CSV files must contain columns: url, wildcard, ip_address, ip_range, etc.
-  - CSV files should be named with format: scopes_for_<program>_at_<timestamp>.csv
-
-For more info, visit: https://github.com/yourusername/h1csvGrabber
+For more info, visit: https://github.com/tyto-sec/HackerOneCsvGrabber
         """,
         formatter_class=argparse.RawDescriptionHelpFormatter
         )
