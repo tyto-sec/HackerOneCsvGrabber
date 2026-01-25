@@ -1,0 +1,6 @@
+output/
+scope/
+build/
+HackerOneCsvGrabber.egg-info/
+*.pyc
+__pycache__/
