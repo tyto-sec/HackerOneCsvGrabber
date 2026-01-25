@@ -24,11 +24,6 @@ jobs:
           python -m pip install pytest
           python -m pip install .
 
-      - name: Show tree
-        run: |
-          ls -la
-          ls -la tests
-
       - name: Run tests
         run: |
           pytest tests
