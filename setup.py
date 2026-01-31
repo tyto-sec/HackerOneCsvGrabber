@@ -6,6 +6,7 @@ setup(
     author="Victor Silva",
     description="A tool to extract and process in scope assets from Hacker One CSV files",
     packages=find_packages(include=["src", "src.*"]),
+    py_modules=["main"],
     package_dir={"": "."},
     install_requires=[],
     entry_points={
@@ -13,4 +14,15 @@ setup(
             "HackerOneCsvGrabber=src.main:main",
         ],
     },
+    classifiers=[
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: Information Technology",
+        "Topic :: Security",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+    ],
 )
