@@ -38,7 +38,7 @@ HackerOneCsvGrabber --help
 Or run directly from source:
 
 ```bash
-python3 -m src.main --input <path> --output <path>
+python3 -m main --input <path> --output <path>
 ```
 
 <br>
