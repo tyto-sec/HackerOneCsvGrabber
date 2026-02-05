@@ -4,3 +4,4 @@ build/
 HackerOneCsvGrabber.egg-info/
 *.pyc
 __pycache__/
+old_scope/
