@@ -11,7 +11,7 @@ setup(
     install_requires=[],
     entry_points={
         "console_scripts": [
-            "HackerOneCsvGrabber=src.main:main",
+            "HackerOneCsvGrabber=main:main",
         ],
     },
     classifiers=[
