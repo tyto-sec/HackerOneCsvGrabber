@@ -1,5 +1,6 @@
 import os
 import glob
+import datetime as dt
 
 from src.core.csv_extractor import (
     extract_asset
@@ -58,25 +59,25 @@ def run(input_directory, output_directory):
     if not os.path.exists(output_directory):
         os.makedirs(output_directory)
     
-    output_file = os.path.join(output_directory, "rough_urls.txt")
+    output_file = os.path.join(output_directory, f"{dt.datetime.now().strftime('%Y%m%d')}_rough_urls.txt")
     save_asset_to_file(all_assets.get("urls", set()), output_file, "URLs")
 
-    output_file = os.path.join(output_directory, "rough_wildcards.txt")
+    output_file = os.path.join(output_directory, f"{dt.datetime.now().strftime('%Y%m%d')}_rough_wildcards.txt")
     save_asset_to_file(all_assets.get("wildcards", set()), output_file, "Wildcards")
 
-    output_file = os.path.join(output_directory, "source_code_repos.txt")
+    output_file = os.path.join(output_directory, f"{dt.datetime.now().strftime('%Y%m%d')}_source_code_repos.txt")
     save_asset_to_file(all_assets.get("source_code_repos", set()), output_file, "Source Code Repositories")
 
-    output_file = os.path.join(output_directory, "rough_ip_addresses.txt")
+    output_file = os.path.join(output_directory, f"{dt.datetime.now().strftime('%Y%m%d')}_rough_ip_addresses.txt")
     save_asset_to_file(all_assets.get("ip_addresses", set()), output_file, "IP Addresses")
 
-    output_file = os.path.join(output_directory, "rough_ip_ranges.txt")
+    output_file = os.path.join(output_directory, f"{dt.datetime.now().strftime('%Y%m%d')}_rough_ip_ranges.txt")
     save_asset_to_file(all_assets.get("ip_ranges", set()), output_file, "IP Ranges")
 
-    output_file = os.path.join(output_directory, "apple_store_app_ids.txt")
+    output_file = os.path.join(output_directory, f"{dt.datetime.now().strftime('%Y%m%d')}_apple_store_app_ids.txt")
     save_asset_to_file(all_assets.get("apple_store_app_ids", set()), output_file, "Apple Store App IDs")
 
-    output_file = os.path.join(output_directory, "google_play_app_ids.txt")
+    output_file = os.path.join(output_directory, f"{dt.datetime.now().strftime('%Y%m%d')}_google_play_app_ids.txt")
     save_asset_to_file(all_assets.get("google_play_app_ids", set()), output_file, "Google Play App IDs")
 
     for urls in all_assets.get("urls", set()):
@@ -84,7 +85,7 @@ def run(input_directory, output_directory):
         if is_valid_domain(cleaned_url):
             all_assets["cleaned_urls"] = all_assets.get("cleaned_urls", set()).union({cleaned_url})
 
-    output_file = os.path.join(output_directory, "cleaned_urls.txt")
+    output_file = os.path.join(output_directory, f"{dt.datetime.now().strftime('%Y%m%d')}_cleaned_urls.txt")
     save_asset_to_file(all_assets.get("cleaned_urls", set()), output_file, "Cleaned URLs")
 
     for wildcards in all_assets.get("wildcards", set()):
@@ -92,7 +93,7 @@ def run(input_directory, output_directory):
         if is_valid_domain(cleaned_wildcard):
             all_assets["wildcards_domains"] = all_assets.get("wildcards_domains", set()).union({cleaned_wildcard})
 
-    output_file = os.path.join(output_directory, "wildcards_domains.txt")
+    output_file = os.path.join(output_directory, f"{dt.datetime.now().strftime('%Y%m%d')}_wildcards_domains.txt")
     save_asset_to_file(all_assets.get("wildcards_domains", set()), output_file, "Wildcards Domains")
 
     expanded_ips = set()
@@ -102,7 +103,7 @@ def run(input_directory, output_directory):
             expanded_ips.update(ips)
     all_assets["expanded_ip_addresses"] = expanded_ips.union(all_assets.get("ip_addresses", set()))
 
-    output_file = os.path.join(output_directory, "expanded_ip_addresses.txt")
+    output_file = os.path.join(output_directory, f"{dt.datetime.now().strftime('%Y%m%d')}_expanded_ip_addresses.txt")
     save_asset_to_file(all_assets.get("expanded_ip_addresses", set()), output_file, "Expanded IP Addresses") 
 
     print("\nExtraction completed successfully!\n")  
